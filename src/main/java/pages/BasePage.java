@@ -28,9 +28,10 @@ public class BasePage {
                 webDriver -> ((JavascriptExecutor) webDriver).executeScript("return document.readyState").equals("complete"));
     }
 
-    public void waitVisibilityOfElement(Duration timeToWait, By locator) {
+    public Boolean waitVisibilityOfElement(Duration timeToWait, By locator) {
         WebDriverWait wait = new WebDriverWait(DriverFactorySingleton.getInstance().getDriver(), timeToWait);
         wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+        return null;
     }
 
 }

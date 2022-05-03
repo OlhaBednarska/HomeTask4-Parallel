@@ -9,8 +9,9 @@ import java.time.Duration;
 
 public class ProductPage extends BasePage {
     By addToCartButton = By.xpath("//li[contains(@class,'buttons__item ng')]");
-    By cartButton = By.xpath("//rz-cart//button[@opencart]");
+    By popUpContent = By.xpath("//rz-cart//button[@opencart]");
     By totalPrice = By.xpath("//li[contains(@class,'buttons__item ng')]");
+
 
     private final WebDriver driver;
 
@@ -30,7 +31,8 @@ public class ProductPage extends BasePage {
         return false;
     }
 
-    public void isCartButtonVisible() {
-        waitVisibilityOfElement(Duration.ofSeconds(30), cartButton);
+    public void isPopUpVisible() {
+        waitVisibilityOfElement(Duration.ofSeconds(5), popUpContent);
     }
+
 }
